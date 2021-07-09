@@ -5,7 +5,7 @@ This is a command-line tool that fetches a list of available dates and times for
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install requirements.
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install requirements. Requires Python 3+.
 
 ```bash
 pip install -r requirements.txt
@@ -31,16 +31,14 @@ When run, the CLI will return a list of availabilities from the Redeam Availabil
 As an example, here is a sample usage string for the CLI application: 
 
 ```bash
-get-availability <supplierid> <productid> <start_date> <end_date>
+Usage: booking_api.py [OPTIONS]
+
+Options:
+  --sid UUID                    Supplier ID  [required]
+  --pid UUID                    Product ID  [required]
+  --start [%Y-%m-%dT%H:%M:%SZ]
+  --end [%Y-%m-%dT%H:%M:%SZ]
 ```
-><supplierid> will be input as --sid
-
-><productid> will be input as --pid
-
-><start_date> will be input as --start
-
-><end_date> will be input as --end
-
 
 Run on python under booking_api.py. Input requires the UUID of the Supplier, the UUID of the Product, a start date/time (optional), and an end date/time (optional). If either/both dates are left blank, results will include default to today as a start date/time and end 24 hours after the start date/time.
 
